@@ -70,79 +70,133 @@ section{
   margin: 4rem 0rem;
 }
 
-  #navbar{
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.415);
-    .container{
-        
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: .5rem 0;
-        margin: 0 2rem;
-        max-width: var(--max-window-size);
-        
-        .left{
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-
-            ul{
-                display: flex;
-                list-style: none;
-                justify-content: center;
-                align-items: center;
-                gap: 1rem;
-                padding-left: 1rem;
-                
-                li{
-                    cursor: pointer;
-                }
-            }
-        }
-        .right{
-            display: flex;
-            gap: 10px;
-        }
-    }
-
-
-  }
-
-  button{
-    font-size: 16px;
-    padding: .5rem 1rem;
-    cursor: pointer;
-    border-style: none;
-  }
-
-  .hollow-dark{
-    background-color: transparent;
-    color: var(--primary-color);
-    border: solid 1px var(--primary-color);
-  }
-
-
-  .full-dark{
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    
-  }
-
-  .hollow-light{
-    background-color: transparent;
-    color: var(--secondary-color);
-    border: solid 1px var(--secondary-color);
-  }
-
-
-  .full-light{
+#navbar {
+  display: flex;
+  position: sticky;
+    top: 0;
     background-color: var(--secondary-color);
-    color: var(--primary-color);
-    
+    z-index: 1000;
+  justify-content: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.415);
+  
+  .container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      margin: 0 2rem;
+      max-width: var(--max-window-size);
+      
+      .left {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          ul {
+              display: flex;
+              list-style: none;
+              justify-content: center;
+              align-items: center;
+              gap: 1rem;
+              padding-left: 1rem;
+              
+              li {
+                  cursor: pointer;
+                  position: relative;
+
+                  a {
+                      text-decoration: none;
+                      color: black;
+                      padding: 5px 0;
+                      transition: color 0.3s ease-in-out;
+
+                      &::after {
+                          content: '';
+                          position: absolute;
+                          left: 0;
+                          bottom: 0;
+                          width: 0;
+                          height: 2px;
+                          border-radius: 10px;
+                          background-color: var(--accent-color); /* or pink */
+                          transition: width 0.3s ease-in-out;
+                      }
+                  }
+
+                  &:hover a {
+                      color: var(--accent-color); /* or pink */
+                  }
+
+                  &:hover a::after {
+                      width: 100%;
+                  }
+              }
+          }
+      }
+
+      .right {
+          display: flex;
+          gap: 10px;
+      }
   }
+}
+
+
+button {
+  font-size: 16px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-style: none;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  border: solid 1px transparent; /* Prevents resizing on hover */
+}
+
+.hollow-dark {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: solid 1px var(--primary-color);
+}
+
+.hollow-dark:hover {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  border-color: var(--accent-color);
+}
+
+.full-dark {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.full-dark:hover {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  border-color: var(--accent-color);
+}
+
+.hollow-light {
+  background-color: transparent;
+  color: var(--secondary-color);
+  border: solid 1px var(--secondary-color);
+}
+
+.hollow-light:hover {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  border-color: var(--accent-color);
+}
+
+.full-light {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.full-light:hover {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  border-color: var(--accent-color);
+}
 
 
 

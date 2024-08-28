@@ -305,3 +305,33 @@ section{
   }
 
 }
+
+footer{
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid black;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+
+
+  .container{
+    width: 100%;
+  }
+  
+  .footer-links{
+    display: flex;
+    justify-content: space-between;
+   
+    ul{
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .socials{
+      font-size: 1.4rem;
+    }
+  }
+}

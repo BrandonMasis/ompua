@@ -378,18 +378,9 @@ button {
             font-size: 2rem;
         }
 
-        h3 {
-            font-size: 46px;
-            line-height: 120%;
-            font-weight: 600;
-        }
+      
 
-        p {
-            font-size: 18px;
-            line-height: 150%;
-            font-weight: 300;
-            max-width: 60ch;
-        }
+      
     }
 
     .image img {
@@ -515,20 +506,7 @@ footer {
       align-items: center;
     }
 
-    h2 {
-        font-size: 46px;
-        line-height: 120%;
-        font-weight: 600;
-        margin-bottom: 1rem;
-    }
-
-    p {
-        font-size: 18px;
-        line-height: 150%;
-        font-weight: 300;
-        max-width: 60ch;
-        margin-bottom: 2rem;
-    }
+   
 }
 
 /* =====================================================
@@ -700,4 +678,28 @@ footer {
       gap: 1rem;
       padding: 1rem 0;
   }
+}
+
+
+/* =====================================================
+   Mobile Queries for Responsive Fonts
+   ===================================================== */
+   @media (max-width: 768px) {
+    /* Adjust font sizes for mobile */
+    h1, .big-h {
+        font-size: 32px;
+    }
+
+    h2, .mid-h {
+        font-size: 28px;
+    }
+
+    h3, .small-h {
+        font-size: 22px;
+    }
+
+    p, .paragraph {
+        font-size: 16px;
+        line-height: 140%;
+    }
 }

@@ -1,391 +1,703 @@
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
+/* =====================================================
+   Custom CSS Reset
+   Inspired by Josh's Custom CSS Reset
+   https://www.joshwcomeau.com/css/custom-css-reset/
+   ===================================================== */
 *, *::before, *::after {
     box-sizing: border-box;
-  }
-  * {
+}
+
+* {
     margin: 0;
-    font-family: "Outfit", sans-serif;
     padding: 0;
-  }
-  body {
+    font-family: "Outfit", sans-serif;
+}
+
+body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-  }
-  img, picture, video, canvas, svg {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+}
+
+img, picture, video, canvas, svg {
     display: block;
     max-width: 100%;
-  }
-  input, button, textarea, select {
-    font: inherit;
-  }
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  #root, #__next {
-    isolation: isolate;
-  }
+}
 
-  :root {
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+/* =====================================================
+   CSS Variables
+   ===================================================== */
+:root {
     --primary-color: #000000;  
     --secondary-color: #ffffff; 
     --accent-color: #6200ea;
-
-    --max-window-size:1200px;
+    --max-window-size: 1200px;
 }
 
-
-
-/* text styles */
-
-.big-h{
+/* =====================================================
+   Typography Styles
+   ===================================================== */
+.big-h {
     font-size: 52px;
     line-height: 120%;
     font-weight: 600;
 }
 
-.mid-h{
-  font-size: 46px;
-  line-height: 120%;
-  font-weight: 600;
+.mid-h {
+    font-size: 46px;
+    line-height: 120%;
+    font-weight: 600;
 }
 
-.small-h{
-  font-size: 25px;
-  font-weight: 500;
+.small-h {
+    font-size: 25px;
+    font-weight: 500;
 }
 
-.paragraph{
+.paragraph {
     font-size: 18px;
     line-height: 150%;
     font-weight: 300;
     max-width: 60ch;
 }
 
-section{
-  margin: 4rem 0rem;
+/* =====================================================
+   General Section Styling
+   ===================================================== */
+section {
+    margin: 4rem 0;
 }
 
+/* =====================================================
+   Navbar Styling
+   ===================================================== */
 #navbar {
-  display: flex;
-  position: sticky;
+    display: flex;
+    position: sticky;
     top: 0;
     background-color: var(--secondary-color);
     z-index: 1000;
-  justify-content: center;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.415);
-  
-  .container {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      padding: 0.5rem 0;
-      margin: 0 2rem;
-      max-width: var(--max-window-size);
-      
-      .left {
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
+    justify-content: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.415);
 
-          ul {
-              display: flex;
-              list-style: none;
-              justify-content: center;
-              align-items: center;
-              gap: 1rem;
-              padding-left: 1rem;
-              
-              li {
-                  cursor: pointer;
-                  position: relative;
+    .container {
+        width: 100%;
+        max-width: var(--max-window-size);
+        margin: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
 
-                  a {
-                      text-decoration: none;
-                      color: black;
-                      padding: 5px 0;
-                      transition: color 0.3s ease-in-out;
+        .left {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
 
-                      &::after {
-                          content: '';
-                          position: absolute;
-                          left: 0;
-                          bottom: 0;
-                          width: 0;
-                          height: 2px;
-                          border-radius: 10px;
-                          background-color: var(--accent-color); /* or pink */
-                          transition: width 0.3s ease-in-out;
-                      }
-                  }
+            h1 {
+                margin-right: 1rem;
+            }
 
-                  &:hover a {
-                      color: var(--accent-color); /* or pink */
-                  }
+            ul {
+                display: flex;
+                list-style: none;
+                gap: 1rem;
+                padding-left: 1rem;
 
-                  &:hover a::after {
-                      width: 100%;
-                  }
-              }
-          }
-      }
+                li {
+                    position: relative;
+                    cursor: pointer;
 
-      .right {
-          display: flex;
-          gap: 10px;
-      }
-  }
+                    a {
+                        text-decoration: none;
+                        color: black;
+                        padding: 5px 0;
+                        transition: color 0.3s ease-in-out;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            width: 0;
+                            height: 2px;
+                            border-radius: 10px;
+                            background-color: var(--accent-color);
+                            transition: width 0.3s ease-in-out;
+                        }
+                    }
+
+                    &:hover a {
+                        color: var(--accent-color);
+                    }
+
+                    &:hover a::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            gap: 10px;
+        }
+    }
 }
 
-
+/* =====================================================
+   Button Styles
+   ===================================================== */
 button {
-  font-size: 16px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-style: none;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  border: solid 1px transparent; /* Prevents resizing on hover */
+    font-size: 16px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: solid 1px transparent; /* Prevents resizing on hover */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .hollow-dark {
-  background-color: transparent;
-  color: var(--primary-color);
-  border: solid 1px var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    border: solid 1px var(--primary-color);
 }
 
 .hollow-dark:hover {
-  background-color: var(--accent-color);
-  color: var(--secondary-color);
-  border-color: var(--accent-color);
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border-color: var(--accent-color);
 }
 
 .full-dark {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .full-dark:hover {
-  background-color: var(--accent-color);
-  color: var(--secondary-color);
-  border-color: var(--accent-color);
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border-color: var(--accent-color);
 }
 
 .hollow-light {
-  background-color: transparent;
-  color: var(--secondary-color);
-  border: solid 1px var(--secondary-color);
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: solid 1px var(--secondary-color);
 }
 
 .hollow-light:hover {
-  background-color: var(--accent-color);
-  color: var(--secondary-color);
-  border-color: var(--accent-color);
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border-color: var(--accent-color);
 }
 
 .full-light {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .full-light:hover {
-  background-color: var(--accent-color);
-  color: var(--secondary-color);
-  border-color: var(--accent-color);
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border-color: var(--accent-color);
 }
 
-
-
-
-  .container{
+/* =====================================================
+   Container General Styling
+   ===================================================== */
+.container {
     max-width: var(--max-window-size);
     margin: 0 2rem;
-  }
+}
 
-  #hero{
+/* =====================================================
+   Hero Section Styling
+   ===================================================== */
+#hero {
     display: flex;
     justify-content: center;
-    .container{
+
+    .container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        justify-content: center;
         align-items: center;
-       
-        
         gap: 1rem;
 
-        .text{
+        .text {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
 
-        .image{
-          img{
+        .image img {
             height: 30rem;
             width: 100%;
             object-fit: cover;
-          }
         }
     }
-  }
+}
 
-
-  #discover{
+/* =====================================================
+   Discover Section Styling
+   ===================================================== */
+#discover {
     display: flex;
     justify-content: center;
- 
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        width: 100%;
+    }
+
+    .heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+    }
+
+    .set {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: space-around;
+
+        &:nth-of-type(1) {
+            justify-self: flex-start;
+        }
+
+        &:nth-of-type(3) {
+            justify-self: flex-end;
+        }
+
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 18rem;
+            gap: 0.5rem;
+
+            i {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .image img {
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        max-width: 25rem;
+    }
+}
+
+/* =====================================================
+   CTA Banner Styling
+   ===================================================== */
+#cta-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    background: linear-gradient(109.6deg, rgb(78, 62, 255) 11.2%, rgb(164, 69, 255) 91.1%);
+    background-size: 200% 200%; /* Double the size for smoother animation */
+    animation: gradientAnimation 8s ease infinite; /* Animate the gradient */
+    color: white;
+    height: 20rem;
+
+    h2 {
+        font-size: 46px;
+        line-height: 120%;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 150%;
+        font-weight: 300;
+        max-width: 60ch;
+    }
+
+    .actions {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+/* =====================================================
+   About Us Section Styling
+   ===================================================== */
+#about-us {
+    display: flex;
+    justify-content: center;
+
+    .container {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        i {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 46px;
+            line-height: 120%;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 150%;
+            font-weight: 300;
+            max-width: 60ch;
+        }
+    }
+
+    .image img {
+        aspect-ratio: 1 / 1;
+        width: 40rem;
+        object-fit: cover;
+    }
+}
+
+/* =====================================================
+   Footer Styling
+   ===================================================== */
+footer {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid black;
+    padding: 1rem 0 2rem 0;
+    background-color: var(--secondary-color);
+
+    .container {
+        width: 100%;
+        max-width: var(--max-window-size);
+        margin: 0 2rem;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            margin-right: 2rem;
+        }
+
+        ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: black;
+                    transition: color 0.3s ease-in-out;
+
+                    &:hover {
+                        color: var(--accent-color);
+                    }
+                }
+            }
+        }
+
+        .socials {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 1.4rem;
+
+            i {
+                cursor: pointer;
+                transition: color 0.3s ease-in-out;
+
+                &:hover {
+                    color: var(--accent-color);
+                }
+            }
+        }
+    }
+}
+
+/* =====================================================
+   Splide Carousel Styling
+   ===================================================== */
+.splide__slide img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+#image-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .splide__track {
+        width: 100%;
+    }
+
+    .splide__list {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .splide__slide img {
+        width: 100%;
+        height: auto;
+    }
+
+  
+}
+
+/* =====================================================
+   Gallery Section Styling
+   ===================================================== */
+#galeria {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    text-align: center;
+    align-items: center;
 
     .container{
       display: flex;
       flex-direction: column;
-      gap: 3rem;
-      width: 100%;
-      
-    }
-
-    .heading{
-      display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      gap: .5rem;
-   
     }
 
-    .set{
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      justify-content: space-around;
+    h2 {
+        font-size: 46px;
+        line-height: 120%;
+        font-weight: 600;
+        margin-bottom: 1rem;
     }
 
-    .features{
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-  
+    p {
+        font-size: 18px;
+        line-height: 150%;
+        font-weight: 300;
+        max-width: 60ch;
+        margin-bottom: 2rem;
+    }
+}
+
+/* =====================================================
+   Keyframes
+   ===================================================== */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* =====================================================
+   Mobile Queries
+   ===================================================== */
+   @media (max-width: 768px) {
+    /* General Section Styling */
+    section {
+        margin: 2rem 1rem;
     }
 
-    .set:nth-of-type(1){
-   
-      justify-self: flex-start;
-  
+    /* Navbar Styling */
+    #navbar .container {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .set:nth-of-type(3){
-     
-      justify-self: flex-end;
+    #navbar .left ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-left: 0;
     }
 
+    /* Hero Section Styling */
+    #hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 
-    .feature{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      max-width: 18rem;
-      gap: .5rem;
-      
+    #hero .image img {
+        height: auto;
+        width: 100%;
+    }
 
-      i{
-        font-size: 30px;
-      }
+    /* Discover Section Styling */
+    #discover .container {
+        gap: 1.5rem;
+    }
 
-      p{
+    #discover .features {
+        grid-template-columns: 1fr;
+    }
+
+    #discover .set {
+        align-items: center;
+        justify-self: center;
+    }
+
+    #discover .image img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    /* CTA Banner Styling */
+    #cta-banner {
+        padding: 2rem 1rem;
+        height: auto;
+    }
+
+    #cta-banner h2 {
+        font-size: 32px;
+    }
+
+    #cta-banner p {
         font-size: 16px;
-      }
     }
 
-    
-
-    .image{
-
-      img{
-        aspect-ratio: 1 /1;
-        object-fit: cover;
-        max-width: 25rem;
-      }
-     
+    /* About Us Section Styling */
+    #about-us .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-  }
 
-#cta-banner{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-  background: linear-gradient(109.6deg, rgb(78, 62, 255) 11.2%, rgb(164, 69, 255) 91.1%);
-  color: white;
-  height: 20rem;
+    #about-us .image img {
+        width: 100%;
+        height: auto;
+    }
 
+    /* Footer Styling */
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Gallery Section Styling */
+    #galeria .container {
+        padding: 1rem;
+    }
 }
 
-#about-us{
-  display: flex;
-  justify-content: center;
- 
 
-  .container{
-    display: flex;
-    gap: 1rem;
-  
-    justify-content: space-between;
-    align-items: center;
-  }
-  .text{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    i{
-      font-size: 2rem;
-    }
-  }
-  .image{
-    img{
-      aspect-ratio: 1 / 1;
-      width: 40rem;
-      object-fit: cover;
-     
-    }
+/* Mobile Queries for Navbar */
+@media (max-width: 768px) {
+  #navbar .container {
+      justify-content: space-between;
   }
 
-}
-
-footer{
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid black;
-  padding-top: 1rem;
-  padding-bottom: 2rem;
-
-
-  .container{
-    width: 100%;
+  #navbar .container .left ul {
+      display: none; /* Hide the menu on small screens */
   }
-  
-  .footer-links{
-    display: flex;
-    justify-content: space-between;
-   
-    ul{
-      display: flex;
-      gap: 1rem;
-      list-style: none;
-      justify-content: center;
+
+  #navbar .container .right {
+      display: none; /* Hide the right-side elements on small screens */
+  }
+
+  #navbar .container .burger-menu {
+      display: flex; /* Show the burger menu */
       align-items: center;
-    }
+      cursor: pointer;
+  }
 
-    .socials{
-      font-size: 1.4rem;
-    }
+  /* Styles for the burger menu */
+  .burger-menu {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+  }
+
+  .burger-menu .line {
+      width: 25px;
+      height: 3px;
+      background-color: var(--primary-color);
+      border-radius: 2px;
+  }
+
+  /* Show the menu when the burger menu is clicked */
+  #navbar.active .left ul {
+      display: flex;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: var(--secondary-color);
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      z-index: 999;
+  }
+
+  #navbar.active .right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
   }
 }

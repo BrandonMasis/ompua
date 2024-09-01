@@ -479,7 +479,9 @@ footer {
 /* =====================================================
    Splide Carousel Styling
    ===================================================== */
-.splide__slide img {
+
+
+   .splide__slide img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
@@ -554,6 +556,12 @@ footer {
    Mobile Queries
    ===================================================== */
    @media (max-width: 768px) {
+
+    #hero{
+        button{
+            width: 10rem;
+        }
+    }
     /* General Section Styling */
     section {
         margin: 2rem 1rem;
@@ -596,9 +604,13 @@ footer {
         justify-self: center;
     }
 
+    #discover .image{
+        padding: 2rem 0rem;
+    }
     #discover .image img {
         max-width: 100%;
         margin: 0 auto;
+  
     }
 
     /* CTA Banner Styling */
@@ -621,10 +633,11 @@ footer {
         align-items: center;
         text-align: center;
     }
-
+    
     #about-us .image img {
         width: 100%;
         height: auto;
+     
     }
 
     /* Footer Styling */
@@ -636,13 +649,16 @@ footer {
     }
 
     footer .footer-links {
-        display: grid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         grid-template-columns: auto 1fr;
-        grid-template-rows: 1fr 1fr;
         gap: .5rem;
     }
 
     footer{
+
+        padding: 1rem;
         .logo{
             grid-column: 1/2;
             justify-self: self-start;
@@ -655,11 +671,7 @@ footer {
         }
         
         ul{
-            grid-column: 1/3;
-            grid-row: 2;
-            gap: 0;
-            display: flex;
-            justify-content: space-between;
+           display: none !important;
         }
     }
 
@@ -734,6 +746,21 @@ footer {
    Mobile Queries for Responsive Fonts
    ===================================================== */
    @media (max-width: 768px) {
+
+    .container{
+        margin: 0 .5rem;
+    }
+    section{
+        padding: 0;
+        margin: 1rem 0rem;
+    }
+    #galeria{
+        
+        .container{
+            padding: 0;
+            margin: 0;
+        }
+    }
     /* Adjust font sizes for mobile */
     h1, .big-h {
         font-size: 32px;

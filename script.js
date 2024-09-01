@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       768: {
         perPage: 1, // Number of slides visible per page on phones
-        gap: '5px', // Adjust the gap for phones
+        gap: '0px', // Adjust the gap for phones
       },
     },
   }).mount();

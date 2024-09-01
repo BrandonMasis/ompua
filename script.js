@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   new Splide('#image-carousel', {
     type: 'loop', // Makes the carousel loop
-    gap: '10px', // Set the gap between slides
+    gap: '4px', // Set the gap between slides
     perPage: 3, // Number of slides visible per page on desktop
 
     breakpoints: {

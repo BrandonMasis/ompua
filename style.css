@@ -257,9 +257,13 @@ button {
 /* =====================================================
    Discover Section Styling
    ===================================================== */
-#discover {
+   #discover {
     display: flex;
     justify-content: center;
+    background: linear-gradient(135deg, rgb(78, 62, 255), rgb(164, 69, 255));
+    color: #ffffff; 
+    margin: 0;
+    padding: 4rem 0;
 
     .container {
         display: flex;
@@ -274,6 +278,18 @@ button {
         align-items: center;
         text-align: center;
         gap: 0.5rem;
+
+        .tagline {
+            color: #f8c3df; /* Lighter shade for the tagline */
+        }
+
+        h2 {
+            color: #ffffff; /* Ensure heading text is white */
+        }
+
+        p {
+            color: #e0e0e0; /* Light grey for better readability */
+        }
     }
 
     .features {
@@ -305,10 +321,16 @@ button {
 
             i {
                 font-size: 30px;
+                color: #ffffff; /* White icons */
+            }
+
+            h4 {
+                color: #ffffff; /* White text for feature titles */
             }
 
             p {
                 font-size: 16px;
+                color: #e0e0e0; /* Light grey for better readability */
             }
         }
     }
@@ -317,8 +339,10 @@ button {
         aspect-ratio: 1 / 1;
         object-fit: cover;
         max-width: 25rem;
+        border-radius: 10px; /* Optional: adds a subtle rounded border */
     }
 }
+
 
 /* =====================================================
    CTA Banner Styling
@@ -504,6 +528,7 @@ footer {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      gap: .5rem;
     }
 
    

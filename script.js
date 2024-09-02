@@ -15,4 +15,18 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     },
   }).mount();
+
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+  function handleScroll() {
+    fadeElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= window.innerHeight - 100) {
+        el.classList.add('appear');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Trigger the function initially in case any sections are already in view
 });

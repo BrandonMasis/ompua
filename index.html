@@ -33,12 +33,14 @@
         rel="stylesheet">
     <!-- Favicons -->
 
-    <!-- Splide Galleries -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <link
-        href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-        rel="stylesheet">
+
+
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
 
     <!-- Icons -->
     <link rel="stylesheet"
@@ -47,9 +49,22 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer">
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css?v=1.0">
+    <link rel="stylesheet"
+        href="./styles/queries.css?v=1.0">
+    <link rel="stylesheet"
+        href="./styles/carousel.css?v=1.0">
+    <!-- jQuery -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <!-- Main Script -->
-    <script defer src="script.js"></script>
+    <script src="script.js" defer></script>
+
+
+    <!-- Owl Carousel JS -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </head>
 
 <body>
@@ -69,10 +84,7 @@
                 </ul>
             </div>
             <div class="right">
-                <button class="hollow-dark">Aprender
-                    más</button>
-                <button
-                    class="full-dark">Regístrate</button>
+                <button class="full-dark">Contacto</button>
             </div>
         </div>
     </nav>
@@ -159,6 +171,106 @@
         </div>
     </section>
 
+    <section id="teachers" class="teacher-carousel">
+        <div class="container">
+            <h2 class="mid-h">Profesoras
+            </h2>
+            <p class="paragraph">Conoce a nuestras
+                educadoras profesionales
+            </p>
+            <div
+                class="owl-carousel custom-carousel owl-theme">
+                <div class="item"
+                    style="background-image: url(https://i.pinimg.com/736x/b4/af/e8/b4afe84cd0bbb8ac1747e569221161a4.jpg);">
+                    <div class="item-desc">
+                        <h3 class="teacher-name">
+                            <img src="https://flagcdn.com/pa.svg"
+                                alt="Hong Kong Flag" />
+                            <div class="teacher-details">
+                                <span
+                                    class="first-name">Maddelin</span>
+                                <span
+                                    class="last-name">Guadamuz</span>
+                            </div>
+                        </h3>
+                        <p>Acrylic nail expert known for her
+                            precision and elegant styles for
+                            weddings and special events.</p>
+                    </div>
+                </div>
+
+                <div class="item"
+                    style="background-image: url(https://i.pinimg.com/736x/b4/af/e8/b4afe84cd0bbb8ac1747e569221161a4.jpg);">
+                    <div class="item-desc">
+                        <h3 class="teacher-name">
+                            <img src="https://flagcdn.com/cr.svg"
+                                alt="Hong Kong Flag" />
+                            <div class="teacher-details">
+                                <span
+                                    class="first-name">Ana</span>
+                                <span
+                                    class="last-name">Mora</span>
+                            </div>
+                        </h3>
+                        <p>Acrylic nail expert known for her
+                            precision and elegant styles for
+                            weddings and special events.</p>
+                    </div>
+                </div>
+
+                <div class="item"
+                    style="background-image: url(https://i.pinimg.com/736x/b4/af/e8/b4afe84cd0bbb8ac1747e569221161a4.jpg);">
+                    <div class="item-desc">
+                        <h3 class="teacher-name">
+                            <img src="https://flagcdn.com/fr.svg"
+                                alt="France Flag" />
+                            Claire Dupont
+                        </h3>
+                        <p>A Paris-based artist famous for
+                            her
+                            minimalist and chic nail art
+                            techniques.</p>
+                    </div>
+                </div>
+
+                <div class="item"
+                    style="background-image: url(https://i.pinimg.com/564x/e8/25/a6/e825a6c25f505ef9e7971563b16f59a0.jpg);">
+                    <div class="item-desc">
+                        <h3 class="teacher-name">
+                            <img src="https://flagcdn.com/jp.svg"
+                                alt="Japan Flag" />
+                            Yuki Tanaka
+                        </h3>
+                        <p>Known for combining traditional
+                            Japanese art with modern nail
+                            trends
+                            for unique designs.</p>
+                    </div>
+                </div>
+
+                <div class="item"
+                    style="background-image: url(https://i.pinimg.com/564x/e8/25/a6/e825a6c25f505ef9e7971563b16f59a0.jpg);">
+                    <div class="item-desc">
+                        <h3 class="teacher-name">
+                            <img src="https://flagcdn.com/gb.svg"
+                                alt="UK Flag" />
+                            Sophie Adams
+                        </h3>
+                        <p>A London-based nail technician
+                            renowned for her intricate,
+                            hand-painted nail art.</p>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+    </section>
+
 
     <section id="galeria" class="fade-in">
         <div class="container">
@@ -169,33 +281,30 @@
                 consectetur adipisicing elit. Animi,
                 laboriosam! Pariatur et facere fugiat cumque
             </p>
-            <section id="image-carousel" class="splide"
+            <div id="image-carousel"
+                class="owl-carousel owl-theme"
                 aria-label="Beautiful Images">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <li class="splide__slide">
-                            <img src="./images/41+gelS+89L (1).jpg"
-                                alt="">
-                        </li>
-                        <li class="splide__slide">
-                            <img src="./images/gallery1"
-                                alt="">
-                        </li>
-                        <li class="splide__slide">
-                            <img src="./images/gallery2"
-                                alt="">
-                        </li>
-                        <li class="splide__slide">
-                            <img src="./images/4aab727b6cb5f57b5de538e6422a6713.jpg"
-                                alt="">
-                        </li>
-                    </ul>
+                <div class="item">
+                    <img src="./images/41+gelS+89L (1).jpg"
+                        alt="">
                 </div>
-            </section>
+                <div class="item">
+                    <img src="./images/gallery1" alt="">
+                </div>
+                <div class="item">
+                    <img src="./images/gallery2" alt="">
+                </div>
+                <div class="item">
+                    <img src="./images/4aab727b6cb5f57b5de538e6422a6713.jpg"
+                        alt="">
+                </div>
+            </div>
+
         </div>
     </section>
 
     <section id="cta-banner" class="fade-in">
+
         <h2 class="mid-h">Contáctanos por WhatsApp</h2>
         <p class="paragraph">¿Tienes preguntas o necesitas
             más información? Estamos aquí para ayudarte.
@@ -213,8 +322,8 @@
         <div class="container">
             <div class="text">
                 <i class="fa-solid fa-graduation-cap"></i>
-                <h3 class="mid-h">OMPUA, tu fuente confiable
-                    para capacitaciones en línea sobre uñas.
+                <h3 class="mid-h">Tu fuente confiable
+                    para capacitaciones en línea
                 </h3>
                 <p class="paragraph">En OMPUA, ofrecemos
                     cursos en línea completos impartidos por

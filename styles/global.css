@@ -1,0 +1,87 @@
+/* =====================================================
+   Custom CSS Reset
+   Inspired by Josh's Custom CSS Reset
+   https://www.joshwcomeau.com/css/custom-css-reset/
+   ===================================================== */
+   *, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Outfit", sans-serif;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+/* =====================================================
+   CSS Variables
+   ===================================================== */
+:root {
+    --primary-color: #000000;  
+    --secondary-color: #ffffff; 
+    --accent-color: #6200ea;
+
+    --max-window-size: 1200px;
+    --round-border:6px;
+
+}
+
+/* =====================================================
+   Typography Styles
+   ===================================================== */
+.big-h {
+    font-size: 52px;
+    line-height: 120%;
+    font-weight: 600;
+}
+
+.mid-h {
+    font-size: 46px;
+    line-height: 120%;
+    font-weight: 600;
+}
+
+.small-h {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.paragraph {
+    font-size: 18px;
+    line-height: 150%;
+    font-weight: 300;
+    max-width: 60ch;
+}
+
+/* =====================================================
+   General Section Styling
+   ===================================================== */
+section {
+    margin: 4rem 0;
+}

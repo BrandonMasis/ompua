@@ -1,0 +1,150 @@
+/* Global carousel styles */
+.owl-carousel {
+  border-radius: var(--round-border);
+  overflow: hidden;
+  padding-top: 1rem;
+  width: 100vw;
+}
+
+/* Carousel items styling */
+.owl-carousel .item {
+  width: 320px;
+  height: 400px;
+  display: flex;
+  margin-right: 10px;
+  padding-bottom: 1.2rem;
+  align-items: flex-end;
+  background: #343434 no-repeat center center / cover;
+  border-radius: var(--round-border);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  text-align: left;
+}
+
+
+#image-carousel{
+  padding-top: 0;
+}
+
+#image-carousel .item{
+  padding-bottom: 0;
+}
+
+#image-carousel .item img {
+  width: 100%; /* Make image fill the width of the card */
+  height: 100%; /* Make image fill the height of the card */
+  object-fit: cover; /* Ensure the image covers the entire card */
+  object-position: center; /* Center the image */
+}
+
+
+
+/* Item description styling */
+.owl-carousel .item.active .item-desc {
+  transform: none;
+}
+
+.owl-carousel .item.active .item-desc p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dots for carousel navigation */
+.owl-theme.custom-carousel .owl-dots {
+  margin-top: -20px;
+  position: relative;
+  z-index: 5;
+}
+
+.owl-carousel .item-desc {
+
+  padding: 0 24px 8px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  transform: translateY(calc(100% - 54px));
+  transition: all 0.4s ease;
+}
+
+
+
+
+.teacher-carousel .item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.teacher-carousel .item{
+
+ .teacher-name {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  gap: 10px;
+  line-height: 22px;
+  padding-bottom: 1rem;
+ 
+}
+
+.teacher-details{
+  display: flex;
+  flex-direction: column;
+ 
+}
+}
+
+.teacher-carousel .teacher-name img {
+
+  width: auto;
+  height: 21px;
+  border-radius: 4px;
+  border-style: none;
+  
+  flex-shrink: 0; /* Ensures the flag doesn't shrink */
+}
+
+/* Aligns description content to the bottom */
+.teacher-carousel .item-desc {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  transform: translateY(calc(100% - 35px));
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Ensures the content is pushed to the bottom */
+}
+
+/* =====================================================
+   Responsive CSS
+   ===================================================== */
+@media (min-width: 992px) {
+  .teacher-carousel .item {
+    width: 260px;
+    height: 360px;
+  }
+  .teacher-carousel .item.active {
+    width: 400px;
+  }
+}
+
+@media (max-width: 991px) {
+  .teacher-carousel {
+    margin-top: 1rem;
+  }
+  .teacher-carousel .item {
+    width: 240px;
+    height: 330px;
+  }
+}
+
+
+

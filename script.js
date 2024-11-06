@@ -1,32 +1,43 @@
 document.addEventListener('DOMContentLoaded', function () {
-  new Splide('#image-carousel', {
-    type: 'loop', // Makes the carousel loop
-    gap: '4px', // Set the gap between slides
-    perPage: 3, // Number of slides visible per page on desktop
-
-    breakpoints: {
-      1024: {
-        perPage: 2, // Number of slides visible per page on tablets
-        gap: '8px', // Adjust the gap for tablets
-      },
-      768: {
-        perPage: 1, // Number of slides visible per page on phones
-        gap: '0px', // Adjust the gap for phones
-      },
-    },
-  }).mount();
-
-  const fadeElements = document.querySelectorAll('.fade-in');
-
+  // Scroll animation for fade-in elements
   function handleScroll() {
     fadeElements.forEach((el) => {
       const rect = el.getBoundingClientRect();
-      if (rect.top <= window.innerHeight - 100) {
+      if (rect.top <= window.innerHeight) {
         el.classList.add('appear');
       }
     });
   }
 
+  const fadeElements = document.querySelectorAll('.fade-in');
   window.addEventListener('scroll', handleScroll);
   handleScroll(); // Trigger the function initially in case any sections are already in view
+});
+
+$(document).ready(function () {
+  // Owl Carousel for custom carousel
+  $('.custom-carousel').owlCarousel({
+    autoWidth: true,
+    autoHeight: true,
+    loop: true,
+    center: true,
+    lazyLoad: true,
+  });
+
+  // Click functionality for custom carousel items
+  $('.custom-carousel .item').click(function () {
+    $('.custom-carousel .item').not($(this)).removeClass('active');
+    $(this).toggleClass('active');
+  });
+
+  // Owl Carousel for image carousel
+  $('#image-carousel').owlCarousel({
+    autoWidth: true,
+    loop: true,
+    center: true,
+    autoplay: true,
+    autoplayTimeout: 1900,
+    autoplayHoverPause: false,
+    lazyLoad: true,
+  });
 });

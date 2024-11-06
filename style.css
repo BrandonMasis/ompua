@@ -1,87 +1,8 @@
-/* =====================================================
-   Custom CSS Reset
-   Inspired by Josh's Custom CSS Reset
-   https://www.joshwcomeau.com/css/custom-css-reset/
-   ===================================================== */
-*, *::before, *::after {
-    box-sizing: border-box;
-}
+@import "./styles/global.css";
+@import "./styles/buttons.css";
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Outfit", sans-serif;
-}
 
-body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: var(--secondary-color);
-}
 
-img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-}
-
-input, button, textarea, select {
-    font: inherit;
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-}
-
-#root, #__next {
-    isolation: isolate;
-}
-
-/* =====================================================
-   CSS Variables
-   ===================================================== */
-:root {
-    --primary-color: #000000;  
-    --secondary-color: #ffffff; 
-    --accent-color: #6200ea;
-    --max-window-size: 1200px;
-}
-
-/* =====================================================
-   Typography Styles
-   ===================================================== */
-.big-h {
-    font-size: 52px;
-    line-height: 120%;
-    font-weight: 600;
-}
-
-.mid-h {
-    font-size: 46px;
-    line-height: 120%;
-    font-weight: 600;
-}
-
-.small-h {
-    font-size: 25px;
-    font-weight: 500;
-}
-
-.paragraph {
-    font-size: 18px;
-    line-height: 150%;
-    font-weight: 300;
-    max-width: 60ch;
-}
-
-/* =====================================================
-   General Section Styling
-   ===================================================== */
-section {
-    margin: 4rem 0;
-}
 
 /* =====================================================
    Navbar Styling
@@ -135,7 +56,7 @@ section {
                             bottom: 0;
                             width: 0;
                             height: 2px;
-                            border-radius: 10px;
+                            border-radius: var(--round-border);
                             background-color: var(--accent-color);
                             transition: width 0.3s ease-in-out;
                         }
@@ -159,62 +80,7 @@ section {
     }
 }
 
-/* =====================================================
-   Button Styles
-   ===================================================== */
-button {
-    font-size: 16px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border: solid 1px transparent; /* Prevents resizing on hover */
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
 
-.hollow-dark {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: solid 1px var(--primary-color);
-}
-
-.hollow-dark:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-    border-color: var(--accent-color);
-}
-
-.full-dark {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-.full-dark:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-    border-color: var(--accent-color);
-}
-
-.hollow-light {
-    background-color: transparent;
-    color: var(--secondary-color);
-    border: solid 1px var(--secondary-color);
-}
-
-.hollow-light:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-    border-color: var(--accent-color);
-}
-
-.full-light {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-}
-
-.full-light:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-    border-color: var(--accent-color);
-}
 
 /* =====================================================
    Container General Styling
@@ -222,6 +88,7 @@ button {
 .container {
     max-width: var(--max-window-size);
     margin: 0 2rem;
+    
 }
 
 /* =====================================================
@@ -247,6 +114,7 @@ button {
             height: 30rem;
             width: 100%;
             object-fit: cover;
+            border-radius: var(--round-border);
         }
     }
 }
@@ -336,7 +204,8 @@ button {
         aspect-ratio: 1 / 1;
         object-fit: cover;
         max-width: 25rem;
-        border-radius: 10px; /* Optional: adds a subtle rounded border */
+        border-radius: var(--round-border);
+        margin: 2rem;
     }
 }
 
@@ -384,8 +253,9 @@ button {
     justify-content: center;
 
     .container {
-        display: flex;
-        gap: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
         justify-content: space-between;
         align-items: center;
     }
@@ -404,17 +274,67 @@ button {
       
     }
 
+    .image{
+        background-color: #f8c3df;
+    }
+
     .image img {
         aspect-ratio: 1 / 1;
         width: 40rem;
         object-fit: cover;
+        border-radius: var(--round-border);
+        
+    }
+}
+
+
+
+
+#teachers{
+    display: flex;
+    justify-content: center;
+    .container{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+        max-width: var(--max-window-size);
+        
     }
 }
 
 /* =====================================================
+   Gallery Section Styling
+   ===================================================== */
+#galeria {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    text-align: center;
+    align-items: center;
+
+    .container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: .5rem;
+    }
+
+   
+}
+
+
+
+
+/* =====================================================
    Footer Styling
    ===================================================== */
-footer {
+   footer {
     display: flex;
     justify-content: center;
     border-top: 1px solid black;
@@ -473,343 +393,4 @@ footer {
     }
 }
 
-/* =====================================================
-   Splide Carousel Styling
-   ===================================================== */
 
-
-   .splide__slide img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-#image-carousel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-
-    .splide__track {
-        width: 100%;
-    }
-
-    .splide__list {
-        display: flex;
-        gap: 1rem;
-    }
-
-    .splide__slide img {
-        width: 100%;
-        height: auto;
-    }
-
-  
-}
-
-/* =====================================================
-   Gallery Section Styling
-   ===================================================== */
-#galeria {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    text-align: center;
-    align-items: center;
-
-    .container{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: .5rem;
-    }
-
-   
-}
-
-/* =====================================================
-   Keyframes
-   ===================================================== */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-
-/* =====================================================
-   Mobile Queries
-   ===================================================== */
-   @media (max-width: 768px) {
-
-  
-
-    #hero{
-        button{
-            width: 10rem;
-        }
-    }
-    /* General Section Styling */
-    section {
-        margin: 2rem 1rem;
-    }
-
-    /* Navbar Styling */
-    #navbar .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #navbar .left ul {
-        flex-direction: column;
-        gap: 0.5rem;
-        padding-left: 0;
-    }
-
-    /* Hero Section Styling */
-    #hero .container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    #hero .image img {
-        height: auto;
-        width: 100%;
-    }
-
-    /* Discover Section Styling */
-    #discover .container {
-        gap: 1.5rem;
-    }
-
-    #discover .features {
-        grid-template-columns: 1fr;
-
-        .feature{
-            max-width: max-content;
-        }
-    }
-
-    #discover .set {
-        align-items: center;
-        justify-self: center;
-
-    
-    
-            &:nth-of-type(1) {
-                justify-self: center;
-            }
-    
-            &:nth-of-type(3) {
-                justify-self: center;
-            }
-    }
-
-    #discover .image{
-        padding: 2rem 0rem;
-    }
-    #discover .image img {
-        max-width: 100%;
-        margin: 0 auto;
-  
-    }
-
-    /* CTA Banner Styling */
-    #cta-banner {
-        padding: 4rem 1rem;
-        height: auto;
-    }
-
-    #cta-banner h2 {
-        font-size: 32px;
-    }
-
-    #cta-banner p {
-        font-size: 16px;
-    }
-
-    /* About Us Section Styling */
-    #about-us .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    #about-us .image img {
-        width: 100%;
-        height: auto;
-     
-    }
-
-    /* Footer Styling */
-    footer .container {
-        margin: 0;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    footer .footer-links {
-        display: flex;
-  
-        grid-template-columns: auto 1fr;
-        gap: .5rem;
-    }
-
-    footer{
-
-        padding: 1rem;
-        
-        .logo{
-            grid-column: 1/2;
-            justify-self: self-start;
-        }
-
-        .socials{
-            grid-column: 2/3;
-            grid-row: 1;
-            justify-self: flex-end;
-         
-
-            i{
-                font-size: 2rem;
-            }
-        }
-        
-        ul{
-           display: none !important;
-        }
-    }
-
-    /* Gallery Section Styling */
-    #galeria .container {
-        padding: 1rem;
-    }
-}
-
-
-/* Mobile Queries for Navbar */
-@media (max-width: 768px) {
-    
-  #navbar .container {
-      justify-content: space-between;
-  }
-
-  #navbar .container .left ul {
-      display: none; /* Hide the menu on small screens */
-  }
-
-  #navbar .container .right {
-      display: none; /* Hide the right-side elements on small screens */
-  }
-
-  #navbar .container .burger-menu {
-      display: flex; /* Show the burger menu */
-      align-items: center;
-      cursor: pointer;
-  }
-
-  /* Styles for the burger menu */
-  .burger-menu {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-  }
-
-  .burger-menu .line {
-      width: 25px;
-      height: 3px;
-      background-color: var(--primary-color);
-      border-radius: 2px;
-  }
-
-  /* Show the menu when the burger menu is clicked */
-  #navbar.active .left ul {
-      display: flex;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background-color: var(--secondary-color);
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-      z-index: 999;
-  }
-
-  #navbar.active .right {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 0;
-  }
-}
-
-
-/* =====================================================
-   Mobile Queries for Responsive Fonts
-   ===================================================== */
-   @media (max-width: 768px) {
-
-    .container{
-        margin: 0 .5rem;
-    }
-    section{
-        padding: 0;
-        margin: 1.5rem 0rem;
-    }
-    #galeria{
-        
-        .container{
-            padding: 0;
-            margin: 0;
-        }
-    }
-    /* Adjust font sizes for mobile */
-    h1, .big-h {
-        font-size: 32px;
-
-    }
-
-    h2, .mid-h {
-        font-size: 28px;
-   
-    }
-
-    h3, .small-h {
-        font-size: 22px;
-
-    }
-
-    p, .paragraph {
-        font-size: 16px;
-        line-height: 140%;
-     
-    }
-}
-
-
-/* Animation Class */
-.fade-in {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.fade-in.appear {
-    opacity: 1;
-}

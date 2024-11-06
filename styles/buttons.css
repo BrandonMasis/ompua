@@ -1,0 +1,56 @@
+/* =====================================================
+   Button Styles
+   ===================================================== */
+   button {
+    font-size: 16px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: solid 1px transparent; /* Prevents resizing on hover */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.hollow-dark {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: solid 1px var(--primary-color);
+}
+
+.hollow-dark:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border-color: var(--accent-color);
+}
+
+.full-dark {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.full-dark:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border-color: var(--accent-color);
+}
+
+.hollow-light {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: solid 1px var(--secondary-color);
+}
+
+.hollow-light:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border-color: var(--accent-color);
+}
+
+.full-light {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.full-light:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border-color: var(--accent-color);
+}

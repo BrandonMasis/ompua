@@ -41,7 +41,7 @@ $(document).ready(function () {
         <div class="item" style="background-image: url('${imgSrc}');">
           <div class="item-desc">
             <h3 class="teacher-name">
-              <img src="https://flagcdn.com/cr.svg" alt="${teacher.Country} Flag" />
+              <img src="${teacher.Flag}" alt="${teacher.Country} Flag" />
               <div class="teacher-details">
                 <span class="first-name">${teacher['First Name']}</span>
                 <span class="last-name">${teacher['Last Name']}</span>

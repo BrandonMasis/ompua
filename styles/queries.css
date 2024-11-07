@@ -40,9 +40,7 @@
     /* Hero Section Styling */
     #hero {
         margin: 2rem 1.5rem;
-        button {
-            width: 10rem;
-        }
+       
 
         .container {
             grid-template-columns: 1fr;
@@ -174,6 +172,8 @@
     #navbar .container {
         justify-content: space-between;
         margin: 0 1.5rem;
+        display: flex;
+        justify-content: center;
 
         .left ul {
             display: none; /* Hide the menu on small screens */
@@ -260,4 +260,15 @@
     }
 
    
+}
+
+@media(max-width:400px){
+    .actions{
+        display: flex;
+        flex-direction: column;
+
+        button{
+            width: 100%;
+        }
+    }
 }
